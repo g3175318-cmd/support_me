@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment</title>
+    <style>
+        /* Base Styles & Dark Theme */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        /* Card Container with Fade-In Animation */
+        .payment-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            max-width: 350px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography */
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+        p {
+            color: #b0c4de;
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #00ff88;
+            margin-bottom: 30px;
+        }
+
+        /* Animated Payment Button */
+        .pay-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #5f2c82, #49a09d);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(73, 160, 157, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .pay-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(73, 160, 157, 0.6);
+            background: linear-gradient(45deg, #49a09d, #5f2c82);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(73, 160, 157, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(73, 160, 157, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(73, 160, 157, 0); }
+        }
+
+        /* Mobile Warning Text */
+        .note {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #8892b0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-card">
+        <h1>Support My Work</h1>
+        <p>Click the button below to complete your secure payment via PhonePe or any UPI app.</p>
+        
+        <div class="amount">₹30.00</div>
+
+        <a href="upi://pay?pa=6297565802@ybl&pn=AMLAN%20DEY&am=30.00&cu=INR" class="pay-btn">
+            Pay with UPI
+        </a>
+
+        <div class="note">
+            ⚠️ Note: This button only works on a mobile device with a UPI app installed.
+        </div>
+    </div>
+
+</body>
+</html>
